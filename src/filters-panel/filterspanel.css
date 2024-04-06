@@ -1,0 +1,16 @@
+.filter-container {
+  box-shadow: 10px 10px 5px var(--ternary-light);
+}
+
+#per-page-select {
+  background-color: white;
+}
+
+.options-container {
+  min-height: 0vh;
+  max-height: 0vh;
+  z-index: 1;
+  .option {
+    background-color: white;
+  }
+}

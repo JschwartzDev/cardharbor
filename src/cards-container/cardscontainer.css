@@ -1,0 +1,30 @@
+.cards-container {
+  box-shadow: 10px 10px 5px var(--ternary-light);
+}
+
+.display-card-container {
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
+.display-card-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.display-card-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.nav-button {
+  font-size: 3rem;
+  background-color: var(--primary);
+  color: var(--secondary-light);
+}
+
+.nav-button:hover {
+  background-color: var(--secondary);
+  color: var(--primary);
+  cursor: pointer;
+}

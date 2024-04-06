@@ -1,0 +1,7 @@
+.card-container {
+  box-shadow: 10px 10px 5px var(--ternary-light);
+}
+
+.card-image:hover {
+  transform: scale(1.5);
+}
