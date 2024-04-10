@@ -1,5 +1,5 @@
 .cards-container {
-  box-shadow: 10px 10px 5px var(--ternary-light);
+  box-shadow: 5px 5px 5px var(--ternary-light);
 }
 
 .display-card-container {
@@ -21,10 +21,9 @@
   font-size: 3rem;
   background-color: var(--primary);
   color: var(--secondary-light);
+  cursor: pointer;
 }
 
 .nav-button:hover {
-  background-color: var(--secondary);
-  color: var(--primary);
-  cursor: pointer;
+  color: var(--secondary);
 }

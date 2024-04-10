@@ -1,3 +1,4 @@
+import "./mainpanel.css";
 import CardsContainer from "../cards-container/CardsContainer";
 import FiltersPanel from "../filters-panel/FiltersPanel";
 
@@ -37,7 +38,7 @@ function MainPanel() {
 
   useEffect(() => {
     fetch(
-      `http://localhost:4400/all-cards?currentPage=${currentPage}&keywords=${filters.keywords}&priceLow=${filters.priceLow}&priceHigh=${filters.priceHigh}&selectedPerPage=${filters.selectedPerPage}`
+      `http://localhost:4400/allcards?currentPage=${currentPage}&keywords=${filters.keywords}&priceLow=${filters.priceLow}&priceHigh=${filters.priceHigh}&selectedPerPage=${filters.selectedPerPage}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -47,7 +48,7 @@ function MainPanel() {
       });
   }, [currentPage, filters]);
   return (
-    <div className="w-100 mh-90 flex-col-center">
+    <div className="main-container w-100 mh-90 flex-col-center">
       <FiltersPanel handleSetFilters={handleSetFilters} />
       <CardsContainer
         totalPages={totalPages}

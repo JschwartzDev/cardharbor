@@ -8,7 +8,7 @@ function CardsContainer({ data, handlePreviousPage, handleNextPage }) {
   return (
     <div className="w-80 mh-80 b flex-row-between cards-container">
       <div
-        className="w-10 mh-80 flex-col-center nav-button btn"
+        className="w-10 mh-80 flex-col-center nav-button"
         onClick={() => handlePreviousPage()}
       >
         <FontAwesomeIcon icon={faCaretLeft} />
@@ -20,7 +20,7 @@ function CardsContainer({ data, handlePreviousPage, handleNextPage }) {
           })}
       </div>
       <div
-        className="w-10 mh-80 flex-col-center nav-button btn"
+        className="w-10 mh-80 flex-col-center nav-button"
         onClick={() => handleNextPage()}
       >
         <FontAwesomeIcon icon={faCaretRight} />

@@ -1,7 +1,12 @@
 import "./filterspanel.css";
 import { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+
+import UserWatchList from "../user-watch-list/UserWatchList";
 
 function FiltersPanel({ handleSetFilters }) {
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
   const [optionsVisible, setOptionsVisible] = useState(false);
   const [keywords, setKeywords] = useState("");
   const [priceLow, setPriceLow] = useState("");
@@ -19,6 +24,19 @@ function FiltersPanel({ handleSetFilters }) {
     return obj;
   }
 
+  function createEmptyFiltersObj() {
+    let obj = {};
+    obj.keywords = "";
+    obj.priceLow = "";
+    obj.priceHigh = "";
+    obj.selectedPerPage = 20;
+    setKeywords("");
+    setPriceHigh("");
+    setPriceLow("");
+    setSelectedPerPage(20);
+    return obj;
+  }
+
   return (
     <div className="w-20 mr-10 mh-80">
       <div className="w-100 mh-40 b flex-col-start mr-10 filter-container">
@@ -28,6 +46,7 @@ function FiltersPanel({ handleSetFilters }) {
             id="keyword-input"
             type="text"
             className="w-80 p-5"
+            value={keywords}
             onChange={(e) => {
               setKeywords(e.target.value);
             }}
@@ -89,7 +108,15 @@ function FiltersPanel({ handleSetFilters }) {
           )}
         </div>
         <div className="w-100 flex-row-around ml-10 mr-10">
-          <button className="p-5 w-50 btn">Clear</button>
+          <button
+            className="p-5 w-50 btn"
+            onClick={() => {
+              let obj = createEmptyFiltersObj();
+              handleSetFilters(obj);
+            }}
+          >
+            Clear
+          </button>
           <button
             className="p-5 w-50 btn"
             onClick={() => {
@@ -101,6 +128,7 @@ function FiltersPanel({ handleSetFilters }) {
           </button>
         </div>
       </div>
+      {isAuthenticated && <UserWatchList />}
     </div>
   );
 }

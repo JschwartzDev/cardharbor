@@ -1,5 +1,9 @@
 .card-container {
-  box-shadow: 10px 10px 5px var(--ternary-light);
+  box-shadow: 5px 5px 5px var(--ternary-light);
+}
+
+.card-name {
+  font-weight: bold;
 }
 
 .card-image:hover {

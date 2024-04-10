@@ -1,5 +1,7 @@
 .filter-container {
-  box-shadow: 10px 10px 5px var(--ternary-light);
+  box-shadow: 5px 5px 5px var(--ternary-light);
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 #per-page-select {

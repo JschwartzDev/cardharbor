@@ -40,14 +40,42 @@
   text-align: center;
 }
 
+.link {
+  color: var(--ternary-light);
+}
+
+.link:visited {
+  color: var(--secondary-light);
+}
+
+.h-box {
+  background-color: var(--primary);
+  color: var(--ternary-light);
+}
+
+.h-box:hover {
+  background-color: var(--ternary-light);
+  color: var(--primary);
+}
+
 .icon {
   font-size: 2rem;
-  color: var(--secondary);
+  color: var(--primary);
   cursor: pointer;
 }
 
 .icon:hover {
   color: var(--secondary-light);
+}
+
+.inverse-icon {
+  font-size: 2rem;
+  color: var(--secondary-light);
+  cursor: pointer;
+}
+
+.inverse-icon:hover {
+  color: var(--primary);
 }
 
 .btn {
@@ -229,7 +257,7 @@
 }
 
 .b {
-  border: 1px solid var(--secondary-light);
+  border: 3px solid var(--secondary-light);
 }
 
 .r-b-top {

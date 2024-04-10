@@ -1,0 +1,25 @@
+.watch-list-container {
+  box-shadow: 5px 5px 5px var(--ternary-light);
+
+  .label {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .watched-cards-list-container {
+    min-height: 25vh;
+    max-height: 25vh;
+    overflow-y: scroll;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .watched-cards-list-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .watched-cards-list-container {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
