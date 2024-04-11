@@ -11,20 +11,10 @@ function Navbar() {
       <div className="logo w-20 mh-10 flex-col-center">
         <div className="placeholder w-25 h-25"></div>
       </div>
-      {/* <div className="search w-50 mh-10 flex-row-center">
-        <button className="p-5 btn">All</button>
-        <input type="text" className="w-75 p-5" style={{ outline: "none" }} />
-        <button className="p-5 btn">Search</button>
-      </div> */}
-      <div className="w-80 mh-10 flex-row-center">
-        <div className="w-100 mh-10 flex-row-between text-color navbar-title">
-          <div className="placeholder w-10"></div>
-          <div>DeckDex</div>
-          <div className="button-group w-20 mh-10 flex-row-center">
-            {!isAuthenticated && <LoginButton />}
-            {isAuthenticated && <LogoutButton />}
-          </div>
-        </div>
+      <div className="text-color navbar-title">CardHarbor</div>
+      <div className="button-group w-20 mh-10 flex-row-center">
+        {!isAuthenticated && <LoginButton />}
+        {isAuthenticated && <LogoutButton />}
       </div>
     </div>
   );

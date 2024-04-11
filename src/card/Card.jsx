@@ -3,6 +3,9 @@ import "./card.css";
 function Card({ card }) {
   //links appear with an extra " right before the path, the " is removed by below code
   function setLink(priceObj, card) {
+    if (priceObj === "") {
+      return card.link.replace('"', "");
+    }
     if (priceObj.sourcesite.toLowerCase().includes("troll")) {
       if (card.link[0].length === 1) {
         return card.link.replace('"', "");
@@ -28,21 +31,36 @@ function Card({ card }) {
             <th>Price</th>
           </tr>
         </thead>
-        <tbody>
-          {card.prices.map((price) => {
-            const obj = JSON.parse(price);
+        <tbody className="text-center">
+          {/* if no price is grabbed but card exists, trollandtoad may be doing an inventory audit */}
+          {card.prices.length < 1 && (
+            <tr>
+              <td>
+                <a href={setLink("", card)} target="_blank" className="link">
+                  Possible inventory audit on trollandtoad.com
+                </a>
+              </td>
+            </tr>
+          )}
+          {card.prices.length > 0 &&
+            card.prices.map((price) => {
+              const obj = JSON.parse(price);
 
-            return (
-              <tr className="text-center" key={obj.price}>
-                <td>
-                  <a href={setLink(obj, card)} target="_blank" className="link">
-                    <i>{obj.sourcesite}</i>
-                  </a>
-                </td>
-                <td>{obj.price}</td>
-              </tr>
-            );
-          })}
+              return (
+                <tr className="text-center" key={obj.price}>
+                  <td>
+                    <a
+                      href={setLink(obj, card)}
+                      target="_blank"
+                      className="link"
+                    >
+                      <i>{obj.sourcesite}</i>
+                    </a>
+                  </td>
+                  <td>{obj.price}</td>
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </div>
