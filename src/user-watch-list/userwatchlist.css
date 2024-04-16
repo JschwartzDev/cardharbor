@@ -1,5 +1,5 @@
 .watch-list-container {
-  box-shadow: 5px 5px 5px var(--ternary-light);
+  width: 50%;
 
   .label {
     font-weight: bold;

@@ -1,0 +1,8 @@
+.placeholder-container {
+  font-size: 3rem;
+  text-align: center;
+
+  .placeholder-login-button {
+    padding: 20px;
+  }
+}

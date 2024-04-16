@@ -61,7 +61,7 @@ const UserWatchList = () => {
   };
 
   return (
-    <div className="w-100 mh-30 b flex-col-start mr-10 mt-10 watch-list-container">
+    <div className="mh-30 flex-col-start watch-list-container">
       <div className="w-90 flex-col-start m-10">
         <div className="w-100 label">Add to Watch List</div>
         <input

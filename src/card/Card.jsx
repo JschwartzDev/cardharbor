@@ -6,6 +6,7 @@ function Card({ card }) {
     if (priceObj === "") {
       return card.link.replace('"', "");
     }
+
     if (priceObj.sourcesite.toLowerCase().includes("troll")) {
       if (card.link[0].length === 1) {
         return card.link.replace('"', "");

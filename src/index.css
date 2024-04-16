@@ -14,6 +14,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 .bg-primary {
@@ -348,4 +349,102 @@
 
 .pl-10 {
   padding-left: 10px;
+}
+
+/* media queries */
+@media screen and (max-width: 900px) {
+  /* NAVBAR */
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    .logo {
+      width: 100px;
+    }
+
+    .placeholder {
+      width: 20%;
+    }
+  }
+
+  /* FILTER PANEL */
+  .sidebar-container {
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    .filter-container {
+      width: 100%;
+      border: none;
+      border-bottom: 3px solid var(--ternary-light);
+      padding-bottom: 10px;
+      .upper-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0px;
+      }
+
+      .lower-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .per-page-label {
+          text-align: center;
+        }
+      }
+
+      .keywords-container {
+        width: 75%;
+        margin-bottom: 10px;
+      }
+
+      .max-price-container {
+        margin-left: 0px;
+        margin-bottom: 10px;
+        width: 75%;
+      }
+
+      .checkbox-container {
+        margin-top: 15px;
+        width: 75%;
+        .checkbox-sub-container {
+          text-align: center;
+          width: 100%;
+          margin: 10px;
+        }
+      }
+
+      .filter-button-group {
+        margin-top: 10px;
+      }
+    }
+
+    .watch-list-container {
+      width: 100%;
+    }
+
+    .placeholder-container {
+      width: 100%;
+      font-size: 2rem;
+    }
+  }
+
+  /* MAIN CONTAINER */
+  .main-container {
+    padding-top: 0;
+    border-bottom: 3px solid var(--ternary-light);
+  }
+
+  /* CARD CONTAINER PANEL */
+  .cards-container {
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    border-top: 3px solid var(--ternary-light);
+  }
+
+  /* INDIVIDUAL CARDS */
+  .card-container {
+    width: 100%;
+  }
 }

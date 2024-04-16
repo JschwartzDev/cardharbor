@@ -9,8 +9,9 @@ function MainPanel() {
   const [filters, setFilters] = useState({
     currentPage: currentPage,
     keywords: "",
-    priceLow: "",
-    priceHigh: "",
+    maxPrice: "",
+    tntSelected: true,
+    amazonSelected: true,
     selectedPerPage: 20,
   });
   const [data, setData] = useState("");
@@ -37,18 +38,40 @@ function MainPanel() {
   };
 
   useEffect(() => {
-    fetch(
-      `http://localhost:4400/allcards?currentPage=${currentPage}&keywords=${filters.keywords}&priceLow=${filters.priceLow}&priceHigh=${filters.priceHigh}&selectedPerPage=${filters.selectedPerPage}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setData(data);
-        setTotalPages(Math.ceil(data.total / filters.selectedPerPage));
-      });
+    if (filters.tntSelected && !filters.amazonSelected) {
+      fetch(
+        `http://localhost:4400/tntcards?currentPage=${currentPage}&keywords=${filters.keywords}&maxPrice=${filters.maxPrice}&selectedPerPage=${filters.selectedPerPage}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setData(data);
+          setTotalPages(Math.ceil(data.total / filters.selectedPerPage));
+        });
+    } else if (filters.amazonSelected && !filters.tntSelected) {
+      fetch(
+        `http://localhost:4400/amazoncards?currentPage=${currentPage}&keywords=${filters.keywords}&maxPrice=${filters.maxPrice}&selectedPerPage=${filters.selectedPerPage}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setData(data);
+          setTotalPages(Math.ceil(data.total / filters.selectedPerPage));
+        });
+    } else {
+      fetch(
+        `http://localhost:4400/allcards?currentPage=${currentPage}&keywords=${filters.keywords}&maxPrice=${filters.maxPrice}&selectedPerPage=${filters.selectedPerPage}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setData(data);
+          setTotalPages(Math.ceil(data.total / filters.selectedPerPage));
+        });
+    }
   }, [currentPage, filters]);
   return (
-    <div className="main-container w-100 mh-90 flex-col-center">
+    <div className="main-container w-100 mh-90 flex-col-center mb-10">
       <FiltersPanel handleSetFilters={handleSetFilters} />
       <CardsContainer
         totalPages={totalPages}
