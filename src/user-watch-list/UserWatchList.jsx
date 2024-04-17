@@ -30,7 +30,7 @@ const UserWatchList = () => {
       },
       body: JSON.stringify({ email: user.email, item: newWatchListItem }),
     };
-    fetch("http://localhost:4400/userwatchlist", reqParams)
+    fetch("https://cardharbor-api.onrender.com/userwatchlist", reqParams)
       .then((res) => res.json())
       .then((data) => {
         setCurrentWatchList(data.items.reverse());
