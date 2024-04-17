@@ -11,7 +11,9 @@ const UserWatchList = () => {
 
   if (isAuthenticated) {
     useEffect(() => {
-      fetch(`http://localhost:4400/userwatchlist?email=${user.email}`)
+      fetch(
+        `https://cardharbor-api.onrender.com/userwatchlist?email=${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.items[0].watchlist.length > 0) {
