@@ -48,7 +48,7 @@ const UserWatchList = () => {
       },
       body: JSON.stringify({ email: user.email, item: item }),
     };
-    fetch("http://localhost:4400/userwatchlist/delete", reqParams)
+    fetch("https://cardharbor-api.onrender.com/userwatchlist/delete", reqParams)
       .then((res) => res.json())
       .then((data) => {
         if (data.items) {
