@@ -40,7 +40,7 @@ function MainPanel() {
   useEffect(() => {
     if (filters.tntSelected && !filters.amazonSelected) {
       fetch(
-        `http://localhost:4400/tntcards?currentPage=${currentPage}&keywords=${filters.keywords}&maxPrice=${filters.maxPrice}&selectedPerPage=${filters.selectedPerPage}`
+        `https://cardharbor-api.onrender.com/tntcards?currentPage=${currentPage}&keywords=${filters.keywords}&maxPrice=${filters.maxPrice}&selectedPerPage=${filters.selectedPerPage}`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -50,7 +50,7 @@ function MainPanel() {
         });
     } else if (filters.amazonSelected && !filters.tntSelected) {
       fetch(
-        `http://localhost:4400/amazoncards?currentPage=${currentPage}&keywords=${filters.keywords}&maxPrice=${filters.maxPrice}&selectedPerPage=${filters.selectedPerPage}`
+        `https://cardharbor-api.onrender.com/amazoncards?currentPage=${currentPage}&keywords=${filters.keywords}&maxPrice=${filters.maxPrice}&selectedPerPage=${filters.selectedPerPage}`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -60,7 +60,7 @@ function MainPanel() {
         });
     } else {
       fetch(
-        `http://localhost:4400/allcards?currentPage=${currentPage}&keywords=${filters.keywords}&maxPrice=${filters.maxPrice}&selectedPerPage=${filters.selectedPerPage}`
+        `https://cardharbor-api.onrender.com/allcards?currentPage=${currentPage}&keywords=${filters.keywords}&maxPrice=${filters.maxPrice}&selectedPerPage=${filters.selectedPerPage}`
       )
         .then((res) => res.json())
         .then((data) => {
