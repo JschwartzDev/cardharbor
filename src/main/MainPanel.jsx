@@ -44,7 +44,6 @@ function MainPanel() {
       )
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           setData(data);
           setTotalPages(Math.ceil(data.total / filters.selectedPerPage));
         });
@@ -54,7 +53,6 @@ function MainPanel() {
       )
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           setData(data);
           setTotalPages(Math.ceil(data.total / filters.selectedPerPage));
         });
@@ -64,7 +62,6 @@ function MainPanel() {
       )
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           setData(data);
           setTotalPages(Math.ceil(data.total / filters.selectedPerPage));
         });

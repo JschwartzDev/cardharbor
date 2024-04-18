@@ -37,7 +37,6 @@ const UserWatchList = () => {
       .then((data) => {
         setCurrentWatchList(data.items.reverse());
         setNewWatchListItem("");
-        console.log(data);
       });
   };
 
@@ -55,7 +54,6 @@ const UserWatchList = () => {
       .then((data) => {
         if (data.items) {
           setCurrentWatchList(data.items.reverse());
-          console.log(data);
         } else {
           setCurrentWatchList([]);
         }
