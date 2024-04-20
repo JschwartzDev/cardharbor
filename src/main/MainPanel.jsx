@@ -37,6 +37,15 @@ function MainPanel() {
     }
   };
 
+  const filterData = (data) => {
+    data = filter.data((card) => {
+      if (card.imageSource.length > 10) {
+        return card;
+      }
+    });
+    return data;
+  };
+
   useEffect(() => {
     if (filters.tntSelected && !filters.amazonSelected) {
       fetch(
@@ -44,6 +53,7 @@ function MainPanel() {
       )
         .then((res) => res.json())
         .then((data) => {
+          data = filterData(data);
           setData(data);
           setTotalPages(Math.ceil(data.total / filters.selectedPerPage));
         });
@@ -53,6 +63,7 @@ function MainPanel() {
       )
         .then((res) => res.json())
         .then((data) => {
+          data = filterData(data);
           setData(data);
           setTotalPages(Math.ceil(data.total / filters.selectedPerPage));
         });
@@ -62,6 +73,7 @@ function MainPanel() {
       )
         .then((res) => res.json())
         .then((data) => {
+          data = filterData(data);
           setData(data);
           setTotalPages(Math.ceil(data.total / filters.selectedPerPage));
         });
